@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日记本</title>
+</head>
+<body>
+	<h1>我的日记本</h1>
+	<p>标题：</p>
+	<input id="title">
+	<p>内容：</p>
+	<textarea id="content" cols="30" rows="10"></textarea>	
+	<p><button id="submit">提交</button></p>
+	<p>以往内容：</p>
+	<div id="history">
+
+	</div>
+	<script type="text/javascript">
+		var submit = document.getElementById("submit");	
+		submit.onclick = function(){
+			var title_element=document.getElementById("title");
+			var title=title_element.value;
+			var content_element=document.getElementById("content");
+			var content=content_element.value;
+			var history_element=document.getElementById("history");
+			var history=history_element.innerHTML;
+			history = history + "<p>标题：" + title +'</p>';
+			history = history + "<p>内容：" + content +'</p>';
+			history = history+'<hr>';
+			history_element.innerHTML=history;
+		};	
+	</script>
+</body>
+</html>
